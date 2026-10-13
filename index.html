@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Gestium · Gestão inteligente para sua padaria</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+
+    <!-- Menu lateral (computador) -->
+    <aside class="sidebar">
+      <div class="logo"><span class="logo-mark">G</span><span class="logo-text">GESTIUM</span></div>
+      <nav id="sidenav" class="nav"></nav>
+    </aside>
+
+    <div class="main">
+      <!-- Barra superior -->
+      <header class="topbar">
+        <div class="logo logo-mobile"><span class="logo-mark">G</span>
+          <div class="logo-stack"><strong>Gestium</strong><small>Gestão inteligente para sua padaria</small></div>
+        </div>
+        <div id="crumb" class="crumb"></div>
+        <div class="top-actions">
+          <span class="demo"><i></i> Dados de demonstração</span>
+          <div class="shift"><span aria-hidden="true">☀️</span>
+            <div><strong>1º Turno</strong><small>06:00 - 12:00</small></div>
+          </div>
+          <button id="roleBtn" class="chip-btn" title="Alternar entre funcionário e gerente"></button>
+          <button id="themeBtn" class="icon-btn" title="Tema claro/escuro" aria-label="Alternar tema">🌓</button>
+          <button id="bellBtn" class="icon-btn" title="Notificações" aria-label="Notificações">🔔</button>
+          <span id="avatar" class="avatar" aria-hidden="true">G</span>
+        </div>
+      </header>
+
+      <main id="view" class="view" tabindex="-1"></main>
+    </div>
+
+    <!-- Menu inferior (celular) -->
+    <nav id="bottomnav" class="bottomnav"></nav>
+  </div>
+
+  <!-- Botão de voz -->
+  <button id="micFab" class="mic-fab" aria-label="Falar com o Gestium">🎙️</button>
+
+  <section id="voicePanel" class="voice-panel" hidden>
+    <div class="voice-head">
+      <strong>Converse com o Gestium</strong>
+      <button id="voiceClose" class="icon-btn" aria-label="Fechar">✕</button>
+    </div>
+    <div id="voiceLog" class="voice-log"></div>
+    <div class="voice-hints">
+      Tente: <em>“iniciar pão de sal”</em>, <em>“pular”</em>, <em>“abrir estoque”</em>, <em>“quantas receitas faltam?”</em>
+    </div>
+    <form id="voiceForm" class="voice-form">
+      <button type="button" id="voiceMic" class="mic-btn" aria-label="Gravar">🎙️</button>
+      <input id="voiceInput" type="text" placeholder="Fale ou digite um comando…" autocomplete="off">
+      <button class="btn primary" type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <!-- Primeiro acesso -->
+  <div id="onboarding" class="overlay" hidden></div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
